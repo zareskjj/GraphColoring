@@ -2,9 +2,16 @@
 #
 # COLOR & VALIDATE
 import sys
+
+if sys.version_info[0] != 3:
+    print("Requires python version >= 3")
+    quit()
+
 import os
 import coloring
 import validator
+
+
 
 TEST_LENGTH = 100
 csvs = list()
