@@ -6,11 +6,11 @@ import os
 import coloring
 import validator
 
-TEST_LENGTH = 100
+TEST_LENGTH = 1
 csvs = list()
-for f in os.listdir("."):
+for f in os.listdir("tests"):
     if f.endswith(".csv"):
-        csvs.append(f)
+        csvs.append("tests/" + f)
 bests = dict()
 graphs = dict()
 for file in csvs:
@@ -32,4 +32,4 @@ for l in sorted(bests):
     sum = 0
     for x in bests[l]:
         sum += x
-    print("%20s\t\t%d (%.2f) (%d)" % (l[0:len(l)-len("_edges.csv")], min(bests[l]), sum/TEST_LENGTH, max(best[l]) ) )
+    print("%20s\t\t%d (%.2f) (%d)" % (l[len("tests/"):len(l)-len("_edges.csv")], min(bests[l]), sum/TEST_LENGTH, max(bests[l]) ) )
