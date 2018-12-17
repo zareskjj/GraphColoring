@@ -6,7 +6,7 @@ import os
 import coloring
 import validator
 
-TEST_LENGTH = 1
+TEST_LENGTH = 100
 csvs = list()
 for f in os.listdir("tests"):
     if f.endswith(".csv"):
